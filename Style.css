@@ -24,7 +24,6 @@ body{
     color: white;
     font-size: 16px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    overflow: hidden;
 }
 
 ul{
@@ -102,6 +101,7 @@ li:hover{
     align-items: center;
 }
 
+/* 
 .mid-sec .img{
     display: flex;
     align-items: center;
@@ -114,25 +114,42 @@ li:hover{
     min-height: 200px;
     font-family: barlow-medium;
     transition: 0.5s;
-}
+} */
 
-.mid-sec .img:hover{
+/* .mid-sec .img:hover{
     background-color: #181818;
     cursor: pointer;
     color: yellow;
     transition: 0.5s;
+} */
+
+.mid-sec .pic{
+    -webkit-filter: grayscale(1) invert(1);
+            filter: grayscale(1) invert(1) drop-shadow(0 0px 0.10rem black);
+    width: 300px;
+    min-width: 250px;
+    transition: 0.2s;
 }
 
+.mid-sec .pic:hover{
+    filter: grayscale(1) invert(1) drop-shadow(5px -5px 0.10rem rgb(244, 208, 63, 0.8));
+    cursor: pointer;
+    transition: 0.2s;
+}
 .mid-sec .paragraph{
-    margin-right: 50px;
+    margin-right: 40px;
     color: #B6B6B6 ;
     width: 600px;
     min-width: 260px;
 }
 
+.paragraph h1{
+    font-family: barlow-medium;
+}
 .paragraph p{
     padding-top: 10px;
-    line-height: 1.2em;
+    line-height: 1.3em;
+    font-family: barlow-medium;
 }
 
 .boxes .container{
@@ -153,6 +170,7 @@ li:hover{
     border: 2px #363533 solid;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: 0.5s;
 }
 
 .box h1{
@@ -163,13 +181,21 @@ li:hover{
     color: #B6B6B6;
     margin-top: 10px;
     padding-left: 5px;
+    max-width: 350px;
+}
+
+.box:hover{
+    background-color: #1C1C1C;
+    cursor: pointer;
+    border: 2px #272727 solid ;
+    transition: 0.5s;
 }
 
 .footer{
     background-color: #1C1C1C;
     margin: auto;
     position: relative;
-    top: 215px;
+    top: 213px;
     height: 30px;
 }
 .footer .container{
@@ -180,4 +206,70 @@ li:hover{
     justify-content: center;
     width: 80%;
     margin: auto;
+}
+
+
+
+@media screen and (max-width: 830px) {
+
+    .mid-sec .container{
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mid-sec .paragraph{
+        min-width: 0px;
+        display: block;
+        padding-bottom: 20px;
+        width: 450px;
+    }
+
+    .mid-sec .pic{
+        width: 100px;
+    }
+    
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .mid-sec .paragraph{
+        margin-right: 0px;
+    }
+
+    .mid-sec .pic{
+        max-width: 250px;
+    }
+
+    .box{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .boxes .container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .box{
+        margin-top: 20px;
+    }
+    .box h1{
+        padding-left: 0px;
+        text-align: center;
+    }
+    .box p{
+        text-align: center;
+        padding-left: 0px;
+        max-width: 500px;
+    }
+
+    .boxes .container{
+        margin-top: 50px;
+    }
+    
 }
